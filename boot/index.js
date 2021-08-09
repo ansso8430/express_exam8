@@ -5,7 +5,7 @@ const member = require('../models/member');
 
 module.exports = async (req, res, next) => {
 
-    // 로그인이 되어있는 경우 > 회원 데이터 전역 유지, 로그인 여부 값도 true
+    // 로그인 > 회원 데이터 전역 유지, 로그인 여부 값도 true
     if(req.session.memId) {
         const info = await member.get(req.session.memId);
         if(info) {
